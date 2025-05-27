@@ -30,7 +30,7 @@
       <div class="modal-content modal-right">
         <button class="modal-close" @click="closeSuggestModal">×</button>
         <h3>AI Suggest</h3>
-        <div class="modal-body"></div>
+        <div class="modal-body" v-html="currentSummary"></div>
       </div>
     </div>
 
@@ -107,7 +107,7 @@
               ></textarea>
               <div class="reply-actions">
                 <button class="action-button submit" @click="submitReply">Submit</button>
-                <button class="action-button ai-assist admin-button" @click="openSuggestModal">🔒 AI Suggest</button>
+                <button class="action-button ai-assist admin-button" @click="openSuggestModal(comment.id)">🔒 AI Suggest</button>
               </div>
             </div>
           </div>
@@ -207,7 +207,9 @@ export default {
       this.showModal = true;
       document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
     },
-    openSuggestModal() {
+    openSuggestModal(commentId) {
+      const comment = this.comments.find(c => c.id === commentId);
+      this.currentSummary = comment?.['ai-suggest-comment'] || 'No suggestion available.';
       this.showSuggestModal = true;
       document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
     },
