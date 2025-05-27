@@ -6,7 +6,8 @@
       "content": "Great article! The insights about emerging technologies are spot on. Looking forward to more posts.",
       "timestamp": "2025-05-27T12:35:00Z",
       "likes": 15,
-      "assist-summary": "Here's a summary of Jane Doe's activity on MyBrain.com for an administrator: User Summary: Jane Doe. Overview: Jane Doe has been a member for three years and has an eight-year history of migraines. She consistently suspects chocolate as a trigger and experiences the unique symptom of scintillating scotoma without pain. Key Activities & Interests: Chocolate as a Trigger: Jane is actively trying to identify and manage her chocolate intake. She's sought advice on cutting it out, distinguishing between different types of chocolate, and finding alternative desserts. She's also tracking her food to confirm the connection. Pain-Free Auras (Scintillating Scotoma): Jane is highly interested in understanding her visual disturbances. She frequently discusses experiencing zigzagging, shimmering lights without subsequent migraine pain, seeking reassurance and information about this specific symptom. She's looking for ways to predict these auras and understand their significance. Engagement: Jane is an engaged forum participant, posting questions and seeking advice on both her suspected chocolate trigger and her unique aura experiences. She also utilizes articles on the site to better understand her condition."
+      "assist-summary": "Here's a summary of Jane Doe's activity on MyBrain.com for an administrator: User Summary: Jane Doe. Overview: Jane Doe has been a member for three years and has an eight-year history of migraines. She consistently suspects chocolate as a trigger and experiences the unique symptom of scintillating scotoma without pain. Key Activities & Interests: Chocolate as a Trigger: Jane is actively trying to identify and manage her chocolate intake. She's sought advice on cutting it out, distinguishing between different types of chocolate, and finding alternative desserts. She's also tracking her food to confirm the connection. Pain-Free Auras (Scintillating Scotoma): Jane is highly interested in understanding her visual disturbances. She frequently discusses experiencing zigzagging, shimmering lights without subsequent migraine pain, seeking reassurance and information about this specific symptom. She's looking for ways to predict these auras and understand their significance. Engagement: Jane is an engaged forum participant, posting questions and seeking advice on both her suspected chocolate trigger and her unique aura experiences. She also utilizes articles on the site to better understand her condition.",
+      "ai-suggest-comment": "Jane, thanks for sharing! You're right, migraines often have a genetic link, and it's fascinating how diverse symptoms can be. Your pain-free scintillating scotoma and chocolate trigger could definitely have genetic components. We're seeing more research in these areas. Have you ever explored other neurological conditions in your family history for clues?"
     },
     {
       "id": 2,
@@ -14,7 +15,8 @@
       "content": "I completely agree with the points made about web development trends. Well-written and informative!",
       "timestamp": "2025-05-27T12:40:00Z",
       "likes": 8,
-      "assist-summary": "TODO"
+      "assist-summary": "TODO-2",
+      "ai-suggest-comment": "TODO-2"
     },
     {
       "id": 3,
@@ -22,7 +24,8 @@
       "content": "I completely agree with the points made about web development trends. Well-written and informative!",
       "timestamp": "2025-05-27T12:40:00Z",
       "likes": 8,
-      "assist-summary": "TODO"
+      "assist-summary": "TODO -3",
+      "ai-suggest-comment": "TODO-3"
     }
   ]
 }

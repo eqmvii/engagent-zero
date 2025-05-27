@@ -98,3 +98,8 @@ both modals work but open in the middle of the page lol. Whatever, AI does whate
 
 ---
 
+Make the AI Suggest modal populate with the JSON content in suggest-summary
+
+---
+
+Having real issues here - it isn't pulling data in.
