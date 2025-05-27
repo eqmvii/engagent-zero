@@ -183,6 +183,12 @@ body {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.logo:hover {
+  color: var(--secondary-color);
 }
 
 .nav-links {
