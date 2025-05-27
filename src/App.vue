@@ -42,7 +42,7 @@
         </div>
         
         <div class="featured-image">
-          <div class="image-placeholder">Featured Image</div>
+          <img src="https://placehold.co/1200x400/2c3e50/ffffff?text=Featured+Image" alt="Featured Image" style="width: 100%; height: auto; border-radius: 4px; margin: 2rem 0;">
         </div>
         
         <div class="post-content">
@@ -77,7 +77,7 @@
               <div class="comment-actions">
                 <button class="action-button reaction">👍 {{ comment.likes }}</button>
                 <button class="action-button reply" @click="toggleReply(comment.id)">Reply</button>
-                <button class="action-button ai-assist" @click="openModal(comment['assist-summary'])">AI Assist</button>
+                <button class="action-button ai-assist admin-button" @click="openModal(comment['assist-summary'])">🔒 AI Assist</button>
               </div>
             </div>
             <div class="comment-content">
@@ -99,7 +99,7 @@
               ></textarea>
               <div class="reply-actions">
                 <button class="action-button submit" @click="submitReply">Submit</button>
-                <button class="action-button ai-assist">AI Suggest</button>
+                <button class="action-button ai-assist admin-button">🔒 AI Suggest</button>
               </div>
             </div>
           </div>
@@ -649,6 +649,21 @@ body {
   border: none;
   border-radius: 0 4px 4px 0;
   cursor: pointer;
+}
+
+.admin-button {
+  background-color: #ff6b6b;
+  color: white;
+  border: 1px solid #ff6b6b;
+  font-weight: 500;
+  margin-left: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.admin-button:hover {
+  background-color: #ff5252;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.2);
 }
 
 /* Blog Content Styles */
