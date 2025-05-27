@@ -50,11 +50,11 @@
       <article class="blog-post">
         <h1 class="blog-title">Exploring the Genetic Link in Migraine Disorders</h1>
         <div class="byline">
-          <img src="https://placehold.co/40/2c3e50/ffffff?text=JD" alt="Jane Doe" class="author-avatar">
+          <img src="https://placehold.co/40/2c3e50/ffffff?text=RF" alt="Robert Frost" class="author-avatar">
           <div class="byline-content">
-            <div class="author">By Jane Doe</div>
+            <div class="author">By Robert Frost</div>
             <div class="byline-meta">
-              <span class="date">May 27, 2025</span>
+              <span class="date">May 24, 2025</span>
               <span class="divider">•</span>
               <span class="read-time">5 min read</span>
             </div>
@@ -76,10 +76,6 @@
           <img src="https://placehold.co/800x300/2c3e50/ffffff?text=Content+Image" alt="Content Image" style="width: 100%; height: auto; border-radius: 4px; margin: 2rem 0;">
           
           <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.</p>
-          
-          <blockquote>
-            The best way to predict the future is to implement it. - Alan Kay
-          </blockquote>
           
           <p>Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.</p>
         </div>

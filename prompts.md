@@ -133,3 +133,18 @@ Update all of the lorem ipsum post content text to be pure lorem ipsum - no refe
 ---
 
 reduce the vertical padding above the author byline
+
+---
+
+Change the author of the post in the top of the byline to be Robert Frost. Update the placeholder avatar image to be RF instead of JD at the same time (that's in json/users.json)
+
+---
+
+
+Delete this line in the article content:
+
+The best way to predict the future is to implement it. - Alan Kay
+
+---
+
+That one took the AI a ton of loops, which is insane! 
