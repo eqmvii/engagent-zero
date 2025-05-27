@@ -25,3 +25,7 @@ The comments section is not nested, it's just a list top to bottom.
 Each comment should have a placeholder reaction button, a placeholder reply button, and a placeholder AI Assist button
 
 ---
+
+I found the issue. On GitHub pages, the JSON is in a subdirectory like this: https://eqmvii.github.io/engagent-zero/json/users.json
+
+So after we build the files, we need to update all of the JSON references to prepend /engagent-zero/

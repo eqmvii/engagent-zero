@@ -27,11 +27,31 @@ fi
 
 echo "Updated dist to docs"
 
-# Update paths in index.html
-sed -i 's|src="/assets/|src="/engagent-zero/assets/|g' docs/index.html
-sed -i 's|href="/assets/|href="/engagent-zero/assets/|g' docs/index.html
+# TODO ERIC - doesn't work, manually edited file for test
+# Function to update file paths in a file
+update_paths() {
+    local file="$1"
+    # Create a temporary file
+    local temp_file="${file}.tmp"
+    
+    # Update paths in the file
+    sed \
+        -e 's|"/json/|"engagent-zero/json/|g' \
+        -e 's|/json/|engagent-zero/json/|g' \
+        -e 's|src="/assets/|src="/engagent-zero/assets/|g' \
+        -e 's|href="/assets/|href="/engagent-zero/assets/|g' \
+        "$file" > "$temp_file"
+    
+    # Replace original file with the updated one
+    mv "$temp_file" "$file"
+}
 
-echo "Updated asset paths in index.html"
+export -f update_paths
+
+# Find and update all HTML and JS files
+find docs \( -name '*.html' -o -name '*.js' \) -type f -exec bash -c 'update_paths "$0"' {} \;
+
+echo "Updated all asset paths"
 
 echo "Deployment preparation completed successfully"
 echo "You can now commit and push the changes to GitHub"
