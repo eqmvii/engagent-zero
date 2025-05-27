@@ -48,7 +48,7 @@
 
     <main class="blog-content">
       <article class="blog-post">
-        <h1 class="blog-title">The Future of Web Development: Trends to Watch in 2025</h1>
+        <h1 class="blog-title">Exploring the Genetic Link in Migraine Disorders</h1>
         <div class="byline">
           <img src="https://placehold.co/40/2c3e50/ffffff?text=JD" alt="Jane Doe" class="author-avatar">
           <div class="byline-content">
@@ -66,11 +66,11 @@
         </div>
         
         <div class="post-content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
           
-          <p>Vestibulum auctor dapibus neque. Maecenas sed nisi in arcu semper venenatis. Fusce congue, elit ac semper ullamcorper, sem neque sed risus. Cras varius, orci ac feugiat aliquet, nunc orci tincidunt nisl, eget aliquam nisl nunc vel nisi.</p>
+          <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
           
-          <h2>Emerging Technologies</h2>
+          <h2>Quis autem vel eum</h2>
           <p>Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris, quis sollicitudin sapien justo in libero.</p>
           
           <img src="https://placehold.co/800x300/2c3e50/ffffff?text=Content+Image" alt="Content Image" style="width: 100%; height: auto; border-radius: 4px; margin: 2rem 0;">
@@ -599,8 +599,9 @@ export default {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin: 2rem 0;
-  padding: 1rem 0;
+  margin: 1rem 0;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
 }
 
 .author-avatar {

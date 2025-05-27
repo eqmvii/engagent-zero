@@ -127,3 +127,9 @@ This is a mockup, so we don't need a loading spinner - the 5 seconds will have t
 That got it in a "I'll try a different approach" loop for a while but the result was EXCELLENT.
 
 ---
+
+Update all of the lorem ipsum post content text to be pure lorem ipsum - no references to migraines or technology. 
+
+---
+
+reduce the vertical padding above the author byline
