@@ -3,16 +3,16 @@
     {
       "id": 1,
       "userId": 2,
-      "content": "This is fascinating! My mom also gets migraines, and I often wonder about the genetic link, especially with my pain-free scintillating scotoma. Could genetics also influence how strongly chocolate triggers my migraines? Thanks for the insight!",
+      "content": "This is fascinating! My mom also gets migraines, and I often wonder about the genetic link. Could genetics also influence how strongly chocolate triggers my migraines? Thanks for the insight!",
       "timestamp": "2025-05-27T12:35:00Z",
       "likes": 15,
-      "assist-summary": "<b>Jane Doe on MyBrain.com:</b> Jane Doe has been a member for three years and has an eight-year history of migraines. She consistently suspects chocolate as a trigger and experiences the unique symptom of scintillating scotoma without pain. <b>Key Activities & Interests:</b> Chocolate as a Trigger: Jane is actively trying to identify and manage her chocolate intake. She's sought advice on cutting it out, distinguishing between different types of chocolate, and finding alternative desserts. She's also tracking her food to confirm the connection. <b>Pain-Free Auras (Scintillating Scotoma):</b> Jane is highly interested in understanding her visual disturbances. She frequently discusses experiencing zigzagging, shimmering lights without subsequent migraine pain, seeking reassurance and information about this specific symptom. She's looking for ways to predict these auras and understand their significance. <b>Engagement:</b> Jane is an engaged forum participant, posting questions and seeking advice on both her suspected chocolate trigger and her unique aura experiences. She also utilizes articles on the site to better understand her condition.",
+      "assist-summary": "<b>Jane Doe on MyBrain.com:</b> Jane Doe has been a member for three years and has an eight-year history of migraines. She consistently suspects chocolate as a trigger and experiences the unique symptom of scintillating scotoma without pain. <b>Key Activities & Interests:</b> Jane is actively trying to identify and manage her chocolate intake. She's sought advice on cutting it out, distinguishing between different types of chocolate, and finding alternative desserts. She's also tracking her food to confirm the connection. <b>Pain-Free Auras (Scintillating Scotoma):</b> Jane is highly interested in understanding her visual disturbances. She frequently discusses experiencing zigzagging, shimmering lights without subsequent migraine pain, seeking reassurance and information about this specific symptom. She's looking for ways to predict these auras and understand their significance. <b>Engagement:</b> Jane is an engaged forum participant, posting questions and seeking advice on both her suspected chocolate trigger and her unique aura experiences. She also utilizes articles on the site to better understand her condition.",
       "ai-suggest-comment": "<i>Jane, thanks for sharing! You're right, migraines often have a genetic link, and it's fascinating how diverse symptoms can be. Your pain-free scintillating scotoma and chocolate trigger could definitely have genetic components. We're seeing more research in these areas. Have you ever explored other neurological conditions in your family history for clues?</i>"
     },
     {
       "id": 2,
       "userId": 1,
-      "content": "I completely agree with the points made about web development trends. Well-written and informative!",
+      "content": "Can't wait for a day we figure out how to resolve these migraines for good!",
       "timestamp": "2025-05-27T12:40:00Z",
       "likes": 8,
       "assist-summary": "TODO COMMENT 2",
@@ -21,7 +21,7 @@
     {
       "id": 3,
       "userId": 4,
-      "content": "I completely agree with the points made about web development trends. Well-written and informative!",
+      "content": "I completely agree with the points made. Well-written and informative!",
       "timestamp": "2025-05-27T12:40:00Z",
       "likes": 8,
       "assist-summary": "TODO COMMENT 3",
