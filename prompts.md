@@ -74,3 +74,27 @@ lite:
 Give the textarea a width of 100%
 
 Add a few pixels of padding under the comment-content div and before the text area
+
+"write your reply" inside the text area has no padding between it and the top/left of the comment box. Make it pretty OR ELSE.
+
+---
+
+lite:
+
+Change the AI Assit and AI Suggest buttons to be red in a way that implies they are admin-only tools
+
+Make the red styling on the admin only buttons a little more subtle 
+
+Replace the "featured image" text at the top of app.vue with an actual placeholder featured image, much like the content image in the middle
+
+---
+
+
+We need another modal window. When the user clicks the "AI Suggest" button, open a model on the RIGHT hand side of the window, exactly like the "AI Assist" modal - just on the right side. For now, no content should appear within it, just "AI Assist" at the top.
+
+---
+
+both modals work but open in the middle of the page lol. Whatever, AI does whatever it wants!
+
+---
+

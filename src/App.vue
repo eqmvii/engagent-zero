@@ -26,6 +26,14 @@
       </div>
     </div>
 
+    <div v-if="showSuggestModal" class="modal-overlay" @click.self="closeSuggestModal">
+      <div class="modal-content modal-right">
+        <button class="modal-close" @click="closeSuggestModal">×</button>
+        <h3>AI Suggest</h3>
+        <div class="modal-body"></div>
+      </div>
+    </div>
+
     <main class="blog-content">
       <article class="blog-post">
         <h1 class="blog-title">The Future of Web Development: Trends to Watch in 2025</h1>
@@ -99,7 +107,7 @@
               ></textarea>
               <div class="reply-actions">
                 <button class="action-button submit" @click="submitReply">Submit</button>
-                <button class="action-button ai-assist admin-button">🔒 AI Suggest</button>
+                <button class="action-button ai-assist admin-button" @click="openSuggestModal">🔒 AI Suggest</button>
               </div>
             </div>
           </div>
@@ -147,6 +155,7 @@ export default {
       comments: [],
       users: [],
       showModal: false,
+      showSuggestModal: false,
       currentSummary: '',
       activeReply: null,
       replyText: ''
@@ -198,8 +207,16 @@ export default {
       this.showModal = true;
       document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
     },
+    openSuggestModal() {
+      this.showSuggestModal = true;
+      document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+    },
     closeModal() {
       this.showModal = false;
+      document.body.style.overflow = 'auto'; // Re-enable scrolling
+    },
+    closeSuggestModal() {
+      this.showSuggestModal = false;
       document.body.style.overflow = 'auto'; // Re-enable scrolling
     },
     toggleReply(commentId) {
@@ -345,15 +362,24 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   z-index: 1000;
+}
+
+.modal-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   padding: 2rem;
-  overflow-y: auto;
 }
 
 .modal-content {
