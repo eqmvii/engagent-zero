@@ -8,3 +8,6 @@ Do not worry about a comments section - we will add that later. Use placeholders
 
 ---
 
+Update json/users.json to include 4 users, each with a boring name. Include register date and dummy email address for each.
+
+Now update json/comments.json to contain 3 short comments, and ensure each is authored by a different user from json/users.json

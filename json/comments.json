@@ -1,0 +1,25 @@
+{
+  "comments": [
+    {
+      "id": 1,
+      "userId": 2,
+      "content": "Great article! The insights about emerging technologies are spot on. Looking forward to more posts.",
+      "timestamp": "2025-05-27T12:35:00Z",
+      "likes": 15
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "content": "I completely agree with the points made about web development trends. Well-written and informative!",
+      "timestamp": "2025-05-27T12:40:00Z",
+      "likes": 8
+    },
+    {
+      "id": 3,
+      "userId": 4,
+      "content": "The analysis of future trends is thorough and well-researched. Kudos to the author!",
+      "timestamp": "2025-05-27T12:45:00Z",
+      "likes": 12
+    }
+  ]
+}
