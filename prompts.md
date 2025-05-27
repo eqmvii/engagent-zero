@@ -10,4 +10,18 @@ Do not worry about a comments section - we will add that later. Use placeholders
 
 Update json/users.json to include 4 users, each with a boring name. Include register date and dummy email address for each.
 
+---
+
 Now update json/comments.json to contain 3 short comments, and ensure each is authored by a different user from json/users.json
+
+---
+
+Now please build a comments section. Add it where the comment is in App.vue.
+
+It should read json/comments.json to know the content of each comment. Each should include the user and their dummy avatar in a byline. 
+
+The comments section is not nested, it's just a list top to bottom.
+
+Each comment should have a placeholder reaction button, a placeholder reply button, and a placeholder AI Assist button
+
+---

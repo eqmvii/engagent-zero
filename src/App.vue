@@ -17,6 +17,15 @@
     </header>
 
     <!-- Main Content -->
+    <!-- AI Assist Modal -->
+    <div v-if="showModal" class="modal-overlay" @click.self="closeModal">
+      <div class="modal-content">
+        <button class="modal-close" @click="closeModal">×</button>
+        <h3>AI Assist Summary</h3>
+        <div class="modal-body" v-html="formattedSummary"></div>
+      </div>
+    </div>
+
     <main class="blog-content">
       <article class="blog-post">
         <h1 class="blog-title">The Future of Web Development: Trends to Watch in 2025</h1>
@@ -55,24 +64,56 @@
           <p>Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.</p>
         </div>
       </article>
-      <!-- TODO: Comments Section -->
+      <div class="comments-section">
+        <h2 class="section-title">Comments</h2>
+        <div class="comments-list">
+          <div v-for="comment in comments" :key="comment.id" class="comment-item">
+            <div class="comment-header">
+              <img :src="getUserById(comment.userId).avatar" :alt="getUserById(comment.userId).name" class="comment-avatar">
+              <div class="comment-author">
+                <span class="author-name">{{ getUserById(comment.userId).name }}</span>
+                <span class="comment-date">{{ new Date(comment.timestamp).toLocaleDateString() }}</span>
+              </div>
+              <div class="comment-actions">
+                <button class="action-button reaction">👍 {{ comment.likes }}</button>
+                <button class="action-button reply">Reply</button>
+                <button class="action-button ai-assist" @click="openModal(comment['assist-summary'])">AI Assist</button>
+              </div>
+            </div>
+            <div class="comment-content">
+              <p>{{ comment.content }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     
     <footer class="footer">
       <div class="footer-content">
         <div class="footer-section">
-          <h3>About BlogName</h3>
-          <p>Sharing thoughts on technology, design, and everything in between.</p>
+          <h3 class="footer-heading">MyBrain.com</h3>
+          <p class="footer-description">Sharing thoughts on technology, design, and everything in between.</p>
         </div>
-        <div class="footer-links">
-          <a href="#" class="footer-link">Home</a>
-          <a href="#" class="footer-link">About</a>
-          <a href="#" class="footer-link">Contact</a>
-          <a href="#" class="footer-link">Privacy Policy</a>
+        <nav class="footer-nav">
+          <h4 class="nav-heading">Navigation</h4>
+          <ul class="nav-links">
+            <li><a href="#" class="nav-link">Home</a></li>
+            <li><a href="#" class="nav-link">Categories</a></li>
+            <li><a href="#" class="nav-link">About</a></li>
+            <li><a href="#" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="footer-legal">
+          <h4 class="legal-heading">Legal</h4>
+          <ul class="legal-links">
+            <li><a href="#" class="legal-link">Privacy Policy</a></li>
+            <li><a href="#" class="legal-link">Terms of Service</a></li>
+            <li><a href="#" class="legal-link">Cookie Policy</a></li>
+          </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p> 2025 BlogName. All rights reserved.</p>
+        <p class="copyright">© 2025 MyBrain.com. All rights reserved.</p>
       </div>
     </footer>
   </div>
@@ -81,12 +122,342 @@
 <script>
 export default {
   name: 'App',
-  components: {}
+  components: {},
+  data() {
+    return {
+      comments: [],
+      users: [],
+      showModal: false,
+      currentSummary: ''
+    }
+  },
+  computed: {
+    formattedSummary() {
+      // Convert periods followed by a space to line breaks for better readability
+      return (this.currentSummary || '').replace(/\. /g, '.<br><br>');
+    }
+  },
+  async mounted() {
+    // Fetch users data
+    const usersResponse = await fetch('/json/users.json');
+    const usersData = await usersResponse.json();
+    this.users = usersData.users;
+
+    // Fetch comments data
+    const commentsResponse = await fetch('/json/comments.json');
+    const commentsData = await commentsResponse.json();
+    this.comments = commentsData.comments;
+  },
+  methods: {
+    getUserById(userId) {
+      return this.users.find(user => user.id === userId);
+    },
+    openModal(summary) {
+      this.currentSummary = summary || 'No summary available.';
+      this.showModal = true;
+      document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+    },
+    closeModal() {
+      this.showModal = false;
+      document.body.style.overflow = 'auto'; // Re-enable scrolling
+    }
+  }
 }
 </script>
 
 <style>
 @import './styles/global.css';
+
+/* Footer Styles */
+.footer {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 4rem 2rem 2rem;
+  margin-top: 4rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding-bottom: 2rem;
+}
+
+.footer-section {
+  margin-bottom: 2rem;
+}
+
+.footer-heading {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.footer-description {
+  color: #bdc3c7;
+  line-height: 1.6;
+  max-width: 300px;
+}
+
+.nav-heading,
+.legal-heading {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 1.25rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Header Navigation */
+.toolbar .nav-links {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  margin: 0 2rem;
+}
+
+.toolbar .nav-link {
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.toolbar .nav-link:hover {
+  color: var(--primary-color);
+}
+
+/* Footer Navigation */
+.footer .nav-links,
+.legal-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.nav-link,
+.legal-link {
+  color: #bdc3c7;
+  text-decoration: none;
+  transition: color 0.2s;
+  display: inline-block;
+}
+
+.nav-link:hover,
+.legal-link:hover {
+  color: #3498db;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.copyright {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .footer-section,
+  .footer-nav,
+  .footer-legal {
+    text-align: center;
+  }
+  
+  .footer-description {
+    margin: 0 auto;
+  }
+  
+  .nav-links,
+  .legal-links {
+    align-items: center;
+  }
+}
+
+/* AI Assist Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  z-index: 1000;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  padding: 2rem;
+  margin-left: 2rem;
+  margin-top: 2rem;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+  padding: 0.25rem 0.5rem;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.modal-close:hover {
+  color: #000;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-right: 2rem;
+}
+
+.modal-body {
+  line-height: 1.6;
+  color: #333;
+}
+
+.modal-body strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Comment Styles */
+.comments-section {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.comment-item {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.comment-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.comment-author {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.author-name {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.comment-date {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.comment-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-button {
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.action-button:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+.reaction {
+  color: #4CAF50;
+}
+
+.reply {
+  color: #2196F3;
+}
+
+.ai-assist {
+  color: #FF9800;
+}
+
+.comment-content {
+  color: #333;
+  line-height: 1.6;
+}
 
 /* Byline Styles */
 .byline {
