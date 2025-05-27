@@ -18,6 +18,7 @@ fi
 
 # Rename dist to docs
 mv dist docs
+echo "Updated dist to docs"
 
 # Copy json directory to docs directory
 if [ -d "json" ]; then
@@ -25,7 +26,13 @@ if [ -d "json" ]; then
     echo "Copied json directory to docs directory"
 fi
 
-echo "Updated dist to docs"
+# Fix asset paths for GitHub Pages
+# GitHub Pages serves sites from a subdirectory (the repo name), so we need to make paths relative
+# by removing leading slashes from asset paths
+find docs -type f \( -name "*.html" -o -name "*.js" \) -exec sed -i "s|/assets/|assets/|g" {} \;
+find docs -type f \( -name "*.html" -o -name "*.js" \) -exec sed -i "s|/json/|json/|g" {} \;
+echo "removed leading slashes from asset paths"
+
 
 echo "Deployment preparation completed successfully"
 echo "You can now commit and push the changes to GitHub"

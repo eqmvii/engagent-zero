@@ -34,3 +34,18 @@ So after we build the files, we need to update all of the JSON references to pre
 
 above prompt did not work. Need to find issue manually and give more clear directions.
 
+---
+
+Edit the deploy.sh script to read all .html and .js files in the docs/ and docs/assets folders and edit them as follows:
+
+1. delete the leading slash before any instance of /assets/
+2. delete the leading slash before any instance of /json/
+
+Add a comment explaining this is so the path works on github pages where the repo name is a folder after the main URL.
+
+FYI the script will exclusively run in a node-alpine docker container 
+
+---
+
+Above prompt got good output with SWE-1-lite but was a horrible loop on SWE-1 (free limited), odd? Starting to experience the "model A works well, model B doesn't" phenom. Having choices may help?
+
