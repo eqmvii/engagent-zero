@@ -222,11 +222,11 @@ export default {
       this.showModal = true;
       document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
       
-      // Wait 5 seconds before showing content
+      // Wait 3 seconds before showing content
       setTimeout(() => {
         this.currentSummary = summary || 'No summary available.';
         this.loading = false;
-      }, 5000);
+      }, 2000);
     },
     openSuggestModal(commentId) {
       this.loading = true;
@@ -235,11 +235,11 @@ export default {
       this.showSuggestModal = true;
       document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
       
-      // Wait 5 seconds before showing content
+      // Wait 3 seconds before showing content
       setTimeout(() => {
         this.currentSummary = comment?.['ai-suggest-comment'] || 'No suggestion available.';
         this.loading = false;
-      }, 5000);
+      }, 2000);
     },
     closeModal() {
       this.showModal = false;
