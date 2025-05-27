@@ -1,0 +1,124 @@
+:root {
+  --background-primary: #000000;
+  --background-secondary: #121212;
+  --background-tertiary: #1e1e1e;
+  --text-primary: #ffffff;
+  --text-secondary: #e8e8e8;
+  --text-tertiary: #d0d0d0;
+  --text-quaternary: #b0b0b0;
+  --border-color: #333333;
+  --accent-color: #ffffff;
+  --accent-hover: #e8e8e8;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --transition-duration: 0.3s;
+  --glass-opacity: 0.08;
+  --glass-blur: 12px;
+  --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: rgba(255, 255, 255, var(--glass-opacity));
+  backdrop-filter: blur(var(--glass-blur));
+  border-radius: 20px;
+  border: var(--glass-border);
+  box-shadow: 0 12px 48px var(--shadow-color);
+  transition: all var(--transition-duration) ease;
+}
+
+.glass:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 64px var(--shadow-color);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* Buttons */
+.button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-duration) ease;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px var(--shadow-color);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+/* Inputs */
+.input {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--background-secondary);
+  color: var(--text-primary);
+  transition: all var(--transition-duration) ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+/* Lists */
+ul {
+  list-style: none;
+}
+
+/* Animations */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity var(--transition-duration);
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
