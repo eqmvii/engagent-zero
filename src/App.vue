@@ -138,15 +138,35 @@ export default {
     }
   },
   async mounted() {
-    // Fetch users data
-    const usersResponse = await fetch('/json/users.json');
-    const usersData = await usersResponse.json();
-    this.users = usersData.users;
+    // Helper function to fetch JSON data with error handling
+    const fetchJson = async (path) => {
+      try {
+        // Try the direct path first (works in development)
+        const response = await fetch(path);
+        if (response.ok) return await response.json();
+        
+        // If direct path fails, try with the public path (works in production)
+        const publicResponse = await fetch(`/engagent-zero${path}`);
+        if (publicResponse.ok) return await publicResponse.json();
+        
+        throw new Error(`Failed to fetch ${path}`);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        return { users: [], comments: [] }; // Return empty data if fetch fails
+      }
+    };
 
-    // Fetch comments data
-    const commentsResponse = await fetch('/json/comments.json');
-    const commentsData = await commentsResponse.json();
-    this.comments = commentsData.comments;
+    try {
+      // Fetch users data
+      const usersData = await fetchJson('/json/users.json');
+      this.users = usersData.users || [];
+
+      // Fetch comments data
+      const commentsData = await fetchJson('/json/comments.json');
+      this.comments = commentsData.comments || [];
+    } catch (error) {
+      console.error('Error initializing data:', error);
+    }
   },
   methods: {
     getUserById(userId) {

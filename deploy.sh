@@ -19,6 +19,12 @@ fi
 # Rename dist to docs
 mv dist docs
 
+# Copy public directory to docs
+if [ -d "public" ]; then
+    cp -r public/* docs/
+    echo "Copied public directory to docs"
+fi
+
 echo "Updated dist to docs"
 
 # Update paths in index.html

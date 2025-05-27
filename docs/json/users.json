@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Smith",
+      "email": "john.smith@example.com",
+      "registerDate": "2024-01-15T08:30:00Z",
+      "avatar": "https://placehold.co/150/2c3e50/ffffff?text=JS"
+    },
+    {
+      "id": 2,
+      "name": "Jane Doe",
+      "email": "jane.doe@example.com",
+      "registerDate": "2024-02-20T10:15:00Z",
+      "avatar": "https://placehold.co/150/2c3e50/ffffff?text=JD"
+    },
+    {
+      "id": 3,
+      "name": "Robert Johnson",
+      "email": "robert.j@example.com",
+      "registerDate": "2024-03-10T14:45:00Z",
+      "avatar": "https://placehold.co/150/2c3e50/ffffff?text=RJ"
+    },
+    {
+      "id": 4,
+      "name": "Emily Wilson",
+      "email": "emily.w@example.com",
+      "registerDate": "2024-04-05T09:20:00Z",
+      "avatar": "https://placehold.co/150/2c3e50/ffffff?text=EW"
+    }
+  ]
+}
