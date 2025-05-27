@@ -29,3 +29,8 @@ Each comment should have a placeholder reaction button, a placeholder reply butt
 I found the issue. On GitHub pages, the JSON is in a subdirectory like this: https://eqmvii.github.io/engagent-zero/json/users.json
 
 So after we build the files, we need to update all of the JSON references to prepend /engagent-zero/
+
+---
+
+above prompt did not work. Need to find issue manually and give more clear directions.
+
