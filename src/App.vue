@@ -76,12 +76,20 @@
               </div>
               <div class="comment-actions">
                 <button class="action-button reaction">👍 {{ comment.likes }}</button>
-                <button class="action-button reply">Reply</button>
+                <button class="action-button reply" @click="toggleReply(comment.id)">Reply</button>
                 <button class="action-button ai-assist" @click="openModal(comment['assist-summary'])">AI Assist</button>
               </div>
             </div>
             <div class="comment-content">
               <p>{{ comment.content }}</p>
+            </div>
+            <!-- Reply form -->
+            <div v-if="activeReply === comment.id" class="reply-form">
+              <textarea v-model="replyText" class="reply-input" placeholder="Write your reply..." rows="3"></textarea>
+              <div class="reply-actions">
+                <button class="action-button submit" @click="submitReply">Submit</button>
+                <button class="action-button ai-assist">AI Suggest</button>
+              </div>
             </div>
           </div>
         </div>
@@ -113,7 +121,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="copyright">© 2025 MyBrain.com. All rights reserved.</p>
+        <p class="copyright"> 2025 MyBrain.com. All rights reserved.</p>
       </div>
     </footer>
   </div>
@@ -128,7 +136,9 @@ export default {
       comments: [],
       users: [],
       showModal: false,
-      currentSummary: ''
+      currentSummary: '',
+      activeReply: null,
+      replyText: ''
     }
   },
   computed: {
@@ -180,6 +190,15 @@ export default {
     closeModal() {
       this.showModal = false;
       document.body.style.overflow = 'auto'; // Re-enable scrolling
+    },
+    toggleReply(commentId) {
+      this.activeReply = this.activeReply === commentId ? null : commentId;
+      this.replyText = '';
+    },
+    submitReply() {
+      // Mock submit functionality (no actual submission)
+      this.activeReply = null;
+      this.replyText = '';
     }
   }
 }
@@ -194,6 +213,7 @@ export default {
   color: #ecf0f1;
   padding: 4rem 2rem 2rem;
   margin-top: 4rem;
+  margin-top: 6rem; /* Adjusted to accommodate the reply form */
 }
 
 .footer-content {
