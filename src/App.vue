@@ -22,7 +22,13 @@
       <div class="modal-content">
         <button class="modal-close" @click="closeModal">×</button>
         <h3>AI Assist Summary</h3>
-        <div class="modal-body" v-html="formattedSummary"></div>
+        <div class="modal-body">
+          <div v-if="loading" class="loading-state">
+            <div class="spinner"></div>
+            <p>{{ loadingMessage }}</p>
+          </div>
+          <div v-else v-html="formattedSummary"></div>
+        </div>
       </div>
     </div>
 
@@ -30,7 +36,13 @@
       <div class="modal-content modal-right">
         <button class="modal-close" @click="closeSuggestModal">×</button>
         <h3>AI Suggest</h3>
-        <div class="modal-body" v-html="currentSummary"></div>
+        <div class="modal-body">
+          <div v-if="loading" class="loading-state">
+            <div class="spinner"></div>
+            <p>{{ loadingMessage }}</p>
+          </div>
+          <div v-else v-html="currentSummary"></div>
+        </div>
       </div>
     </div>
 
@@ -158,7 +170,9 @@ export default {
       showSuggestModal: false,
       currentSummary: '',
       activeReply: null,
-      replyText: ''
+      replyText: '',
+      loading: false,
+      loadingMessage: ''
     }
   },
   computed: {
@@ -203,15 +217,29 @@ export default {
       return this.users.find(user => user.id === userId);
     },
     openModal(summary) {
-      this.currentSummary = summary || 'No summary available.';
+      this.loading = true;
+      this.loadingMessage = 'Sending historical user data to Gemini for processing...';
       this.showModal = true;
       document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+      
+      // Wait 5 seconds before showing content
+      setTimeout(() => {
+        this.currentSummary = summary || 'No summary available.';
+        this.loading = false;
+      }, 5000);
     },
     openSuggestModal(commentId) {
+      this.loading = true;
+      this.loadingMessage = 'Sending historical user data to Gemini for processing...';
       const comment = this.comments.find(c => c.id === commentId);
-      this.currentSummary = comment?.['ai-suggest-comment'] || 'No suggestion available.';
       this.showSuggestModal = true;
       document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+      
+      // Wait 5 seconds before showing content
+      setTimeout(() => {
+        this.currentSummary = comment?.['ai-suggest-comment'] || 'No suggestion available.';
+        this.loading = false;
+      }, 5000);
     },
     closeModal() {
       this.showModal = false;
@@ -371,6 +399,34 @@ export default {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+}
+
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #2c3e50;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-state p {
+  color: #666;
+  font-size: 1rem;
+  text-align: center;
 }
 
 .modal-right {

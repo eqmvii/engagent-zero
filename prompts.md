@@ -103,3 +103,27 @@ Make the AI Suggest modal populate with the JSON content in suggest-summary
 ---
 
 Having real issues here - it isn't pulling data in.
+
+---
+
+Make it so that the ai suggest modal pulls ai-suggest-comment data from the comments json to populate the modal, the same way the assist modal pulls assist-summary. 
+
+---
+
+May have been vibing too hard, and accidentally updated the wrong JSON file (docs instead of root) and so of course AI was doing the right thing and I had the setup wrong. 
+
+AI 1, Eric 0.
+
+---
+
+lite:
+
+When opening either modal, display a loading spinner and the text "sending historical user data to Gemini for processing..." for 5 seconds.
+
+This is a mockup, so we don't need a loading spinner - the 5 seconds will have to be hardcoded in - but it will make the experience closer to what we hope the real thing will be.
+
+---
+
+That got it in a "I'll try a different approach" loop for a while but the result was EXCELLENT.
+
+---
