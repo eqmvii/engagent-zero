@@ -83,9 +83,20 @@
             <div class="comment-content">
               <p>{{ comment.content }}</p>
             </div>
+            <div style="padding: 1rem 0"></div>
             <!-- Reply form -->
             <div v-if="activeReply === comment.id" class="reply-form">
-              <textarea v-model="replyText" class="reply-input" placeholder="Write your reply..." rows="3"></textarea>
+              <textarea 
+                v-model="replyText" 
+                class="reply-input" 
+                placeholder="Write your reply..." 
+                rows="3"
+                style="
+                  width: 100%;
+                  padding: 1rem;
+                  box-sizing: border-box;
+                "
+              ></textarea>
               <div class="reply-actions">
                 <button class="action-button submit" @click="submitReply">Submit</button>
                 <button class="action-button ai-assist">AI Suggest</button>

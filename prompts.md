@@ -49,3 +49,28 @@ FYI the script will exclusively run in a node-alpine docker container
 
 Above prompt got good output with SWE-1-lite but was a horrible loop on SWE-1 (free limited), odd? Starting to experience the "model A works well, model B doesn't" phenom. Having choices may help?
 
+---
+
+lite: 
+
+When a user clicks reply on a comment, it should open a comment box underneath.
+
+It should have a submit button and an "AI suggest" button. Neither should so anything, this is just a mock.
+
+---
+
+SWE-1:
+
+The reply box is unstyled and too narrow. Please apply styles to make it look modern and inline with the rest of the app. I've attached a picture of what it currently looks like.
+
+---
+
+Total fail, did all kinds of random shit including adding emojis I didn't want?
+
+---
+
+lite:
+
+Give the textarea a width of 100%
+
+Add a few pixels of padding under the comment-content div and before the text area
