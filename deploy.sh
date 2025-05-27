@@ -22,8 +22,8 @@ mv dist docs
 echo "Updated dist to docs"
 
 # Update paths in index.html
-sed -i 's|src="/assets/|src="/vibe-code-1/assets/|g' docs/index.html
-sed -i 's|href="/assets/|href="/vibe-code-1/assets/|g' docs/index.html
+sed -i 's|src="/assets/|src="/engagent-zero/assets/|g' docs/index.html
+sed -i 's|href="/assets/|href="/engagent-zero/assets/|g' docs/index.html
 
 echo "Updated asset paths in index.html"
 
