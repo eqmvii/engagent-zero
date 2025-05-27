@@ -1,20 +1,6 @@
 <template>
   <div class="app-container" :class="{ 'strobing': strobing }">
-    <h2 class="title">👋 I was a Vue3 app served from a docker container on a windows machine without node installed.</h2>
-    <h2 class="title">Now I'm a Vite-built bundle served on GH pages.</h2>
-    <button @click="toggleMessage" class="button primary">Toggle Snow</button>
-    <p v-if="showMessage" class="message">{{ message }}</p>
-  <div v-if="showMessage" class="snow-container">
-    <div class="snowflake" v-for="i in 50" :key="i" :style="{
-      animationDelay: `${Math.random() * 5}s`,
-      left: `${Math.random() * 100}%`
-    }"></div>
-  </div>
-    
     <div class="components-container">
-      <TodoList @todo-completed="startStrobe" />
-      <h2 class="title">"Add a complete working copy of the game simon underneath the todolist."</h2>
-      <SimonGame />
     </div>
     <footer class="footer">
       <div class="footer-content">
@@ -32,31 +18,12 @@
 </template>
 
 <script>
-import TodoList from './components/TodoList.vue'
-import SimonGame from './components/SimonGame.vue'
+
 
 export default {
-  components: {
-    TodoList,
-    SimonGame
-  },
+  components: {},
   data() {
-    return {
-      message: 'SWE-1-lite did this!',
-      showMessage: false,
-      strobing: false
-    }
-  },
-  methods: {
-    toggleMessage() {
-      this.showMessage = !this.showMessage
-    },
-    startStrobe() {
-      this.strobing = true
-      setTimeout(() => {
-        this.strobing = false
-      }, 3000)
-    }
+    return {}
   }
 }
 </script>
@@ -147,65 +114,7 @@ export default {
   width: 100%;
 }
 
-.button.primary {
-  background: var(--accent-color);
-  color: var(--background-primary);
-  padding: 1.25rem 2.5rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-}
 
-.button.primary:hover {
-  background: var(--accent-hover);
-  transform: translateY(-2px);
-}
-
-.message {
-  color: var(--text-primary);
-  font-size: 1.5rem;
-  margin: 2rem 0;
-  padding: 1rem 2rem;
-  background: var(--background-primary);
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.snow-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.snowflake {
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  background: white;
-  border-radius: 50%;
-  animation: fall 5s linear infinite;
-  transform-origin: center center;
-  opacity: 0.7;
-}
-
-@keyframes fall {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(100vh) rotate(360deg);
-    opacity: 0;
-  }
-}
-
-.snowflake:nth-child(odd) {
-  background: rgba(255, 255, 255, 0.8);
-}
 
 .snowflake:nth-child(3n) {
   animation-duration: 3s;
