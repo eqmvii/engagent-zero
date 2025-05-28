@@ -148,3 +148,17 @@ The best way to predict the future is to implement it. - Alan Kay
 ---
 
 That one took the AI a ton of loops, which is insane! 
+
+---
+
+Create a new file in histories/ entitled JohnSmith.md
+
+Make it have content similar to JaneDoe.md, only describing a different migraine journey and series of comments and article titles for John Smith
+
+---
+
+Using the history in JohnSmith.md please update the comment content for the second comment in comments.json to reflect a comment John Smith would have written
+
+---
+
+It went furhter than expected in comments.json and edited it all, lol
